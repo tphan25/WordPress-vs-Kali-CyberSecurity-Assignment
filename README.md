@@ -42,8 +42,30 @@ Summary:
 
 a title='x onmouseover=alert(unescape(/hello%20world/.source)) style=position:absolute;left:0;top:0;width:5000px;height:5000px  64KB TEXT HERE'
 
-3. Navigate to the post, and any user can be affected by this exploit. Scripts can actually be run on the server using this exploit.
+3. Navigate to the post, and any user can be affected by this exploit. Scripts can actually be run on the server using this exploit if an admin is affected.
 
 --Video Walkthrough
 
 <img src="https://i.imgur.com/gDsnf2O.gif" alt="Oof didn't load">
+
+3. WordPress 4.0-4.7.2 - Authenticated Stored Cross-Site Scripting (XSS) in YouTube URL Embeds
+
+Summary :
+
+--Vulnerability: Cross Site Scripting (XSS)
+
+--Affected Versions: 4.0 - 4.7.2
+
+--Latest Patch/Fix: 4.7.3
+
+--Source Code: https://core.trac.wordpress.org/changeset/40160/trunk/src/wp-includes/embed.php?old=38361&old_path=trunk%2Fsrc%2Fwp-includes%2Fembed.php
+
+--Steps to Recreate:
+
+1. As a user with at least contributor permissions, create a post, and embed a youtube URL.
+2. At the end of the URL, add in scripts between the two character sets \x3csvg and \x3e which represent <svg and > respectively, where <svg is "scalable vector graphics" in html which is generally used for embedding.
+3. Any user who navigates to this post can be affected by this exploit, here I used just a simple alert(1).
+
+--Video Walkthrough
+
+<img src="https://i.imgur.com/PvOQVuj.gif" alt="OOF!!!! didn't load either lmao">

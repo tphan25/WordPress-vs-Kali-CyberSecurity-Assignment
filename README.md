@@ -1,28 +1,3 @@
-# WordPress-vs-Kali-CyberSecurity-Assignment
-
-
-3. WordPress 4.0-4.7.2 - Authenticated Stored Cross-Site Scripting (XSS) in YouTube URL Embeds
-
-Summary :
-
---Vulnerability: Cross Site Scripting (XSS)
-
---Affected Versions: 4.0 - 4.7.2
-
---Latest Patch/Fix: 4.7.3
-
---Source Code: https://core.trac.wordpress.org/changeset/40160/trunk/src/wp-includes/embed.php?old=38361&old_path=trunk%2Fsrc%2Fwp-includes%2Fembed.php
-
---Steps to Recreate:
-
-1. As a user with at least contributor permissions, create a post, and embed a youtube URL.
-2. At the end of the URL, add in scripts between the two character sets \x3csvg and \x3e which represent <svg and > respectively, where <svg is "scalable vector graphics" in html which is generally used for embedding.
-3. Any user who navigates to this post can be affected by this exploit, here I used just a simple alert(1).
-
---Video Walkthrough
-
-<img src="https://i.imgur.com/PvOQVuj.gif" alt="OOF!!!! didn't load either lmao">
-
 # Project 7 - WordPress Pentesting
 
 Time spent: **X** hours spent in total
@@ -57,33 +32,19 @@ Time spent: **X** hours spent in total
   3. Navigate to the post, and any user can be affected by this exploit. Scripts can actually be run on the server using this exploit if an admin is affected.
   - [x] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&new=32311%40branches%2F4.2&old=32300%40branches%2F4.2)
-1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
+3. (Required) WordPress 4.0-4.7.2 - Authenticated Stored Cross-Site Scripting (XSS) in YouTube URL Embeds
+  - [x] Summary: 
+    - Vulnerability types: Cross Site Scripting (XSS)
+    - Tested in version: 4.0 - 4.7.2
+    - Fixed in version: 4.7.3
+  - [x] GIF Walkthrough: 
+  <img src="https://i.imgur.com/PvOQVuj.gif" alt="OOF!!!! didn't load either lmao">
+  - [x] Steps to recreate: 
+  1. As a user with at least contributor permissions, create a post, and embed a youtube URL.
+  2. At the end of the URL, add in scripts between the two character sets \x3csvg and \x3e which represent <svg and > respectively, where <svg is "scalable vector graphics" in html which is generally used for embedding.
+  3. Any user who navigates to this post can be affected by this exploit, here I used just a simple alert(1)
+  - [x] Affected source code:
+    - [Link 1](https://core.trac.wordpress.org/changeset/40160/trunk/src/wp-includes/embed.php?old=38361&old_path=trunk%2Fsrc%2Fwp-includes%2Fembed.php)
 
 ## Assets
 

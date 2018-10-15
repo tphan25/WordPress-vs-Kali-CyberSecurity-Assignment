@@ -1,8 +1,8 @@
 # Project 7 - WordPress Pentesting
 
-Time spent: **X** hours spent in total
+Time spent: **6** hours spent in total
 
-> Objective: Find, analyze, recreate, and document **five vulnerabilities** affecting an old version of WordPress
+> Objective: Find, analyze, recreate, and document **three vulnerabilities** affecting an old version of WordPress
 
 ## Pentesting Report
 
@@ -31,7 +31,7 @@ Time spent: **X** hours spent in total
 
   3. Navigate to the post, and any user can be affected by this exploit. Scripts can actually be run on the server using this exploit if an admin is affected.
   - [x] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&new=32311%40branches%2F4.2&old=32300%40branches%2F4.2)
+    - [Link 2](https://core.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&new=32311%40branches%2F4.2&old=32300%40branches%2F4.2)
 3. (Required) WordPress 4.0-4.7.2 - Authenticated Stored Cross-Site Scripting (XSS) in YouTube URL Embeds
   - [x] Summary: 
     - Vulnerability types: Cross Site Scripting (XSS)
@@ -44,7 +44,7 @@ Time spent: **X** hours spent in total
   2. At the end of the URL, add in scripts between the two character sets \x3csvg and \x3e which represent <svg and > respectively, where <svg is "scalable vector graphics" in html which is generally used for embedding.
   3. Any user who navigates to this post can be affected by this exploit, here I used just a simple alert(1)
   - [x] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/changeset/40160/trunk/src/wp-includes/embed.php?old=38361&old_path=trunk%2Fsrc%2Fwp-includes%2Fembed.php)
+    - [Link 3](https://core.trac.wordpress.org/changeset/40160/trunk/src/wp-includes/embed.php?old=38361&old_path=trunk%2Fsrc%2Fwp-includes%2Fembed.php)
 
 ## Assets
 
@@ -55,15 +55,19 @@ List any additional assets, such as scripts or files
 - [WordPress Source Browser](https://core.trac.wordpress.org/browser/)
 - [WordPress Developer Reference](https://developer.wordpress.org/reference/)
 
-GIFs created with [LiceCap](http://www.cockos.com/licecap/).
+GIFs created with [ScreenToGif](https://www.screentogif.com/).
 
 ## Notes
 
 Describe any challenges encountered while doing the work
 
+In the youtube exploit, I actually mixed single and double quotes at one point and it wasn't functioning properly.
+
+For the comment section exploit, finding 64kb of text was a bit rough, and it repeatedly sends alerts so it can be very damaging to users.
+
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2018] [Tam Phan]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
